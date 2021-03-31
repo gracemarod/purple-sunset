@@ -2,6 +2,7 @@
 
 //From https://stackoverflow.com/a/56869637
 const isColliding = (div1, div2) => {
+
     let svg1_height = div1.querySelector('svg').clientHeight;
     let d1_distance_from_top = svg1_height + div1.getBoundingClientRect().top;
     const notColliding = d1_distance_from_top >= div2.offsetTop;
@@ -58,7 +59,6 @@ const isColliding = (div1, div2) => {
     newDelay +=5;
   
     if(isColliding(newClass, mergeLine)) {
-        console.log('We are touching');
         addY = 0;
         newClass.remove();
         newCloudReflection.remove();
