@@ -1,0 +1,360 @@
+
+:root {
+    --ocean-x-coord: 50vh;
+    --cloud-height: 70px;
+  }
+  
+  body{
+    background-color:#7D6F93;
+    margin:0;
+  }
+  .background{
+    position:relative;
+  }
+  
+  .shape {
+    position:absolute;
+  }
+  
+  .sky-line0{
+    background-color:#776a8c;
+    width:100%;
+    height:5vh;
+  }
+  .sky-line1{
+    top: 5vh;
+    background-color:#7D6F93;
+    width:100%;
+    height:10vh;
+  }
+  
+  .sky-line2{
+    top: 15vh;
+    background-color:#896F94;
+    width:100%;
+    height:10vh;
+  }
+  
+  .sky-line3{
+    top: 25vh;
+    background-color:#A967AE;
+    width:100%;
+    height:10vh;
+  }
+  
+  .sky-line4{
+    top: 35vh;
+    background-color:#b16eb7;
+    width:100%;
+    height:10vh;
+  }
+  
+  .sky-line5{
+      top: 45vh;
+      width:100%;
+      height:5vh;
+      background-color:#e288dc;
+  }
+  
+  .merge-line{
+      margin: auto;
+      top:50vh;
+      left:0;
+      right:0;
+      width:100%;
+      height:5px;
+      background-color:#ffdbfb;
+  }
+  
+  .ocean-sky-line0{
+    background-color:#e288dc;
+    width:100%;
+    height:5vh;
+  }
+  
+  .ocean-sky-line1{
+    top: 5vh;
+    background-color:#b16eb7;
+    width:100%;
+    height:10vh;
+  }
+  .ocean-sky-line2{
+    top: 15vh;
+    background-color:#A967AE;
+    width:100%;
+    height:10vh;
+  }
+  
+  .ocean-sky-line3{
+    top: 25vh;
+    background-color:#896F94;
+    width:100%;
+    height:10vh;
+  }
+  
+  .ocean-sky-line4{
+      top: 35vh;
+      width:100%;
+      height:10vh;
+      background-color:#7D6F93;
+  }
+  .ocean-sky-line5{
+      top: 45vh;
+      width:100%;
+      height:5vh;
+      background-color:#776a8c;
+  }
+  
+  .body-sun, .sun-light-container{
+    display:flex;
+    flex-flow:column;
+    text-align:center;
+    align-items:center;
+    width:100%;
+    height:200px;
+    position:absolute;
+  }
+  
+  .sun{
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    top:100%;
+    width:400px;
+    height: 400px; 
+    overflow:hidden;
+  }
+  
+  .sun-halo1{
+    width:400px;
+    height:400px;
+    border-radius:50%;
+    background-color:#FCE3CA;
+    opacity:0.5;
+  }
+  
+  .sun-halo2{
+    margin: auto;
+    top:1vh;
+    bottom:0;
+    left:0;
+    right:0;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background-color:#FCE3CA;
+    opacity:0.5;
+  }
+  
+  .sun-halo3{
+    margin: auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background-color:#FFF5D2;
+    overflow:hidden;
+  }
+  
+  .ocean{
+    top: 50vh;
+    width: 100%;
+    height: var(--ocean-x-coord);
+    overflow:hidden;
+  }
+  .ocean-reflection {
+    position:absolute;
+    top:50vh;
+    width: 100%;
+    height: 50vh;
+    background-color: #1a1c51;
+    opacity:0.3;
+    overflow:hidden;
+  }
+  .reflections{
+    position:absolute;
+    top:50vh;
+    width: 100%;
+    height:50vh;
+    overflow:hidden;
+  }
+  .sun-light-reflection{
+      display: flex;
+      align-self:center;
+      align-items:center;
+      flex-flow:column;
+      position:absolute;
+      top:50vh;
+      border-top: 50vh solid #FFF5D2;
+      border-left: 12vw solid transparent;
+      border-right: 12vw solid transparent;
+      height: 0;
+      width: 15vw;
+      opacity:0.1;
+  }
+  #refl, #refl-med, #refl-short, #refl-shorter{
+    visibility: hidden;
+  }
+  .reflection-main{
+    height:5px;
+    background-color: #ffffff;
+    opacity:0.3;
+  }
+  /* .long{
+    width:50vw;
+  } */
+  .med{
+    width:40vw;
+  }
+  .short{
+    width:30vw;
+  }
+  .shorter{
+    width:5vw;
+  }
+  .shortest{
+    width:2vw;
+  }
+  .dot{
+    width:1vw;
+  }
+  .reflection{
+    top: 0;
+    width:20vw;
+  }
+  /* Clouds */
+  .clouds-container, .clouds-reflection-container, .clouds-small-container{
+    position: absolute;
+    right: 0; left: 0;
+    margin: auto;
+    width:100%;
+    overflow:hidden;
+  }
+  
+  .clouds-container, .clouds-small-container{ 
+      top: 0; 
+      height:50vh;
+  }
+  
+  .clouds-reflection-container{
+     top: 50vh;
+     height:50vh;
+  }
+  
+  .cloud, .cloud-small { 
+    position:absolute;
+    width:100%;
+    height:var(--cloud-height);
+    margin-left: 110vw;
+    z-index: 1;
+  }
+  
+  /* Adding this class to the small cloud svg it's breaking the animation time */
+  .cloud-small{
+    transform: scale(0.5);
+    -webkit-transform:  scale(0.5);
+    -moz-transform:  scale(0.5);  
+  }
+  
+  .cloud-reflection{
+  
+    transform: translate(0,20vh) rotate(180deg) scaleX(-1) scaleY(0.25);
+    -webkit-transform: translate(0,20vh) rotate(180deg) scaleX(-1) scaleY(0.25);
+      -moz-transform: translate(0,20vh) rotate(180deg) scaleX(-1) scaleY(0.25);
+    opacity:  0.5;
+  }
+  
+  .cloud-small-reflection{
+    opacity:  0.5;
+  }
+  
+  /*The animations for these elements isn't syncing so I'm hiding it for now */
+  #Cloud0, #Cloud-Reflection0, #Cloud-Small0{
+    visibility: hidden;
+  }
+  
+  @keyframes Float {
+    from { transform: translateX(100%) translateZ(0)}
+    to { transform: translateX(-100%) translateZ(0)}
+  }
+  
+  @keyframes animateCloud {
+      from {
+          margin-left: 0;
+      }
+      to {
+          margin-left: -350%;
+      }
+  }
+  
+  @-moz-keyframes animateCloud {
+      from {
+          margin-left: 0;
+      }
+      to {
+          margin-left: -350%;
+      }
+  }
+  
+  @-webkit-keyframes animateCloud {
+      from {
+          margin-left: 0;
+      }
+      to {
+          margin-left: -350%;
+      }
+  }
+  
+  @keyframes nudge {
+    0% {transform: translate(0, 0);}
+    25% {transform:translate(5px,0);}
+    50% {transform:translate(10px,0);}
+    100% {transform:translate(0,0);}
+  }
+  
+  @-moz-keyframes nudge{
+    0% {transform: translate(0, 0);}
+    25% {transform:translate(5px,0);}
+    50% {transform:translate(10px,0);}
+    100% {transform:translate(0,0);}
+  }
+  
+  @-webkit-keyframes nudge{
+    0% {transform: translate(0, 0);}
+    25% {transform:translate(5px,0);}
+    50% {transform:translate(10px,0);}
+    100% {transform:translate(0,0);}
+  }
+  
+  @media screen and (max-height:525px) {
+    .sun{
+        top:20vh;
+        width: 250px;
+        height: 250px; 
+    }
+    .sun-halo1{
+        width: 250px;
+        height: 250px; 
+    }
+    .sun-halo2{
+        width: 180px;
+        height: 180px; 
+    }
+    .sun-halo3{
+        width: 100px;
+        height: 100px; 
+    }
+    .cloud, .cloud-small{
+      height:50px;
+    }
+  
+  }
+  
+  @media screen and (min-height:526px) and (max-height:800px) {
+    .sun{
+        top:20vh;
+    }
+  }
