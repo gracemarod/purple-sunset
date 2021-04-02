@@ -18,14 +18,14 @@ const isColliding = (div1, div2) => {
   const mergeLine = document.getElementById('merge-line');
   
   let smallReflectionTransform = 'translate(0,5vh) rotate(180deg) scaleX(-1) scaleY(0.25)';
-  const cloudCreator = (div1, div2, div1Container, div2Container, cloudReflectionClass, nameId, xStart, yStart, maxObs,addScale,addTransformation) => {
+  const cloudCreator = (div1, div2, div1Container, div2Container, cloudReflectionClass, nameId, maxObjects,addScale,addTransformation, animationTime ) => {
     
-  let addX = xStart;  
-  let addY = yStart;
+  let addX = 0;  
+  let addY = 0;
   let newDelay = 0;
-  let animationTime = 60; 
+  let animTime = animationTime ; 
   let mergeLineBool = false; 
-    for (var i = 1; i <= maxObs;i++){
+    for (var i = 1; i <= maxObjects;i++){
       let newId = nameId + i;
       let newReflectionId = nameId+'-Reflection'+i;
       let newClass = div1.cloneNode(true);
@@ -34,7 +34,7 @@ const isColliding = (div1, div2) => {
       newClass.id = newId;
       newCloudReflection.id = newReflectionId;
       //I think this is making that grow effect in the clouds, fix it with the margin-left: 200px 
-      let newClassAnim = "animateCloud "+animationTime+"s linear "+newDelay+"s infinite";
+      let newClassAnim = "animateCloud "+animTime+"s linear "+newDelay+"s infinite";
       let newTransform = "translate(0,"+addY+"px) "+addScale;
       newClass.style.transform = newTransform;
       newClass.style.webkitTransform = newTransform;
@@ -65,9 +65,9 @@ const isColliding = (div1, div2) => {
       }
     }
   }
-  cloudCreator(Cloud0,CloudReflection0,'clouds-container','clouds-reflection-container','cloud-reflection','Cloud',0,0,7,"","");
+  cloudCreator(Cloud0,CloudReflection0,'clouds-container','clouds-reflection-container','cloud-reflection','Cloud',7,"","", 60);
   
-  cloudCreator(CloudSmall0, CloudReflection0,'clouds-small-container', 'clouds-reflection-container','cloud-small-reflection', 'Cloud-Small', 0, 0, 7,"scale(0.5)",smallReflectionTransform);
+  cloudCreator(CloudSmall0, CloudReflection0,'clouds-small-container', 'clouds-reflection-container','cloud-small-reflection', 'Cloud-Small', 7,"scale(0.5)",smallReflectionTransform, 70);
   
   
   const reflectionsCont = document.getElementById('reflection');
