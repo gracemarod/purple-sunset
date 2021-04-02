@@ -1,4 +1,5 @@
 # Purple Sunset CSS Animation
+![alt text](./assets/Sunset-Screenshot.png)
 ### Description
 - I wanted to explore creating a purple palette and get more familiar with svg and css animations. I also wanted to practice duplicating html elements with JavaScript. I did the cloud svg in Inkscape, which is the first I draw a svg.
 - You can see the animation in this [Codepen](https://codepen.io/gracemarod/pen/vYyvKXd)
